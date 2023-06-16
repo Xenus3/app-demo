@@ -5,7 +5,6 @@ export interface Article {
     fullname: string;
     time: string;
 
-    
 }
 
 

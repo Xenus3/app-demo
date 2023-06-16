@@ -4,6 +4,7 @@ import { HelloWorldComponent } from './components/hello-world/hello-world.compon
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ApisComponent } from './components/apis/apis.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ChaussuresComponent } from './components/chaussures/chaussures.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'chaussures',
+    component: ChaussuresComponent
   }
 ];
 
