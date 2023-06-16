@@ -1,7 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HelloWorldComponent } from './components/hello-world/hello-world.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { ApisComponent } from './components/apis/apis.component';
+import { ContactComponent } from './components/contact/contact.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: HelloWorldComponent
+  },
+  {
+    path: 'articles',
+    component: ArticlesComponent
+  },
+  {
+    path: 'apis',
+    component: ApisComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
