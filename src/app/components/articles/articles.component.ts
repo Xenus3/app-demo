@@ -10,11 +10,17 @@ import { Article } from 'src/app/entities/article';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: Article[] = [];
+  articles: Article[] | undefined;
 
    constructor(public articleservice: ArticleService) {}
+
   ngOnInit(): void {
-    this.articles = this.articleservice.getArticles();
+     this.articleservice.getArticles()
+      .subscribe({
+        next: (res) => this.articles = res,
+        error: (err) => console.error(err)
+      });
+      
   }
   
     

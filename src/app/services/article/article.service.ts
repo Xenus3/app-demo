@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Article } from 'src/app/entities/article';
 
 @Injectable({
@@ -6,26 +8,11 @@ import { Article } from 'src/app/entities/article';
 })
 export class ArticleService {
 
-  private articles: Article[] = [
-    {
-      title:"Lorem ipsum dolor sit amet, consectetur adip.",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.",
-      author:"JohnDoe",
-      fullname: "Jonathan Doenuts",
-      time: "10mn ago"
-    }, 
-  {
-      title:"Lorem ipsum dolor sit amet, consectetur adip.",
-      content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.",
-      author:"Obrian",
-      fullname: "Jonathan Doenuts",
-      time: "20mn ago"
-    }
-  ]
+ private articlesUrl: string = 'http://data.snx.ovh/API.json';
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getArticles():Article[] {
-    return this.articles;
+  getArticles(): Observable<Article[]> {
+    return this.httpClient.get<Article[]>(this.articlesUrl);
   }
 }

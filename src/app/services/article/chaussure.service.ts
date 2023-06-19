@@ -10,7 +10,7 @@ export class ChaussureService {
 
   constructor() { }
 
-  getChaussures() {
+  getChaussures():Chaussure[] {
     return this.chaussures;
   }
 }
