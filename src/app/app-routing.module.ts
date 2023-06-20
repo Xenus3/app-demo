@@ -5,6 +5,9 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ApisComponent } from './components/apis/apis.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ChaussuresComponent } from './components/chaussures/chaussures.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { EntriesComponent } from './components/entries/entries.component';
+import { MessagerieComponent } from './components/messagerie/messagerie.component';
 
 const routes: Routes = [
   {
@@ -26,7 +29,19 @@ const routes: Routes = [
   {
     path: 'chaussures',
     component: ChaussuresComponent
-  }
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent
+  },
+  {
+    path: 'entries',
+    component: EntriesComponent
+  },
+  {
+    path: 'messages',
+    component: MessagerieComponent
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chaussure } from 'src/app/entities/chaussure';
-import { ChaussureService } from 'src/app/services/article/chaussure.service';
+import { ChaussureService } from 'src/app/services/chaussure/chaussure.service';
+
 
 @Component({
   selector: 'app-chaussures',
@@ -9,13 +10,17 @@ import { ChaussureService } from 'src/app/services/article/chaussure.service';
 })
 export class ChaussuresComponent implements OnInit{
 
-  chaussures: Chaussure[] = [];
+  chaussures: Chaussure[] | undefined;
 
   constructor(public chaussureService: ChaussureService) {}
 
   
   ngOnInit(): void {
-    this.chaussures = this.chaussureService.getChaussures();
+    this.chaussureService.getChaussures()
+    .subscribe({
+      next: (res) => this.chaussures = res,
+      error: (err) => console.error(err)
+    });
   }
   
 

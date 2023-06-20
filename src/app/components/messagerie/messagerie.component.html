@@ -1,0 +1,17 @@
+<form  [formGroup]="demoForm" (ngSubmit)="submit()">
+
+<input type="text" formControlName="message">
+<input type="text" formControlName="pseudo">
+<button type="submit">Valider</button>
+
+</form>
+
+<p>
+    {{ demoForm.controls['message'].value }}
+</p>
+
+<p>
+    {{ demoForm.value.message }}
+</p>
+
+<button (click)="updateValue()">Modifier valeurs</button>
